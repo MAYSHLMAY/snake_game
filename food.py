@@ -16,5 +16,8 @@ class Food:
         self.position = self.random_position()
 
     def random_position(self):
-        
+
         """Generate a random position aligned to the grid."""
+        x = random.randint(0, (SCREEN_WIDTH - SNAKE_SIZE) // SNAKE_SIZE) * SNAKE_SIZE
+        y = random.randint(0, (SCREEN_HEIGHT - SNAKE_SIZE) // SNAKE_SIZE) * SNAKE_SIZE
+        return (x, y)  

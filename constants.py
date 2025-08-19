@@ -1,3 +1,4 @@
+import pygame
 
 ''' SCREEN AND GRID '''
 
@@ -9,7 +10,7 @@ GRID_HEIGHT = SCREEN_HEIGHT // SNAKE_SIZE
 
 ''' SNAKE SPEED '''
 
-FPS = 1
+FPS = 10
 
 
 ''' SNAKE COLOR, FOOD, ENVIRONMENT '''
@@ -33,8 +34,38 @@ RIGHT = (1, 0)
 INITIAL_SNAKE_LENGTH = 3  
 FOOD_SIZE = SNAKE_SIZE
 SCORE_PER_FOOD = 10
-WALL_COLLISION = True
+WALL_COLLISION = False
 SELF_COLLISION = True  
+
+""" player controls and directions """
+
+DIRECTIONS = {
+    "UP": (0, -SNAKE_SIZE),
+    "DOWN": (0, SNAKE_SIZE),
+    "LEFT": (-SNAKE_SIZE, 0),
+    "RIGHT": (SNAKE_SIZE, 0),
+}
+
+
+PLAYER_CONTROLS = {
+
+    "snake1": {
+        pygame.K_UP: "UP",
+        pygame.K_DOWN: "DOWN",
+        pygame.K_LEFT: "LEFT",
+        pygame.K_RIGHT: "RIGHT",
+    },
+
+    """ Optional for the future """
+    
+    "snake2": {
+        pygame.K_w: "UP",
+        pygame.K_s: "DOWN",
+        pygame.K_a: "LEFT",
+        pygame.K_d: "RIGHT",
+    },
+    
+}
 
 
 

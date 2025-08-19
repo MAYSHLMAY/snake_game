@@ -1,7 +1,6 @@
 import pygame
-import sys
 from itertools import islice
-import deque
+from collections import deque
 from constants import DIRECTIONS, SNAKE_SIZE, BLACK, RED, GREEN, DARK_GREEN, SCREEN_WIDTH, SCREEN_HEIGHT
 
 

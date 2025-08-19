@@ -1,6 +1,6 @@
 import pygame
 import sys
-# from itertools import islice
+from itertools import islice
 import deque
 from constants import DIRECTIONS, SNAKE_SIZE, BLACK, RED, GREEN, DARK_GREEN, SCREEN_WIDTH, SCREEN_HEIGHT
 
@@ -56,4 +56,32 @@ class Snake:
             }
             if new_dir != opposite.get(self.direction):
                 self.direction = new_dir
+    def grow(self):
+        """Mark snake to grow on next move."""
+        self.grow_pending = True
+    def check_wall_collision(self):
+        """Return True if snake hits a wall."""
+        head_x, head_y = self.segments[0]
+        if head_x < 0 or head_x >= SCREEN_WIDTH or head_y < 0 or head_y >= SCREEN_HEIGHT:
+            print("collided")
+            return True
+        return False
+    def die(self):
+        self.alive = False
+
+    def check_self_collision(self):
+        """Return True if snake hits itself."""
+        head = self.segments[0]
+        if head in islice(self.segments, 1, len(self.segments)):
+            return True
+        return False
+
+    def draw(self, screen):
+        """Draw the snake on the screen."""
+        for i, segment in enumerate(self.segments):
+            color = DARK_GREEN if i == 0 else GREEN 
+            pygame.draw.rect(screen, color, (segment[0], segment[1], SNAKE_SIZE, SNAKE_SIZE))
+
+    
+
     

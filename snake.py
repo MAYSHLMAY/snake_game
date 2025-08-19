@@ -25,7 +25,7 @@ class Snake:
 
     def move(self):
 
-        """Move snake to the current direction"""
+        """Move snake to the specific direction"""
 
         head_x, head_y = self.segments[0]
         dx, dy = DIRECTIONS[self.direction]
@@ -42,3 +42,18 @@ class Snake:
             self.segments.pop()
         else:
             self.grow_pending = False
+
+    def handle_key(self, key):
+
+        """Update direction if key pressed matches this snake's controls"""
+        if key in self.controls:
+            new_dir = self.controls[key]
+            opposite = {
+                "UP": "DOWN",
+                "DOWN": "UP",
+                "LEFT": "RIGHT",
+                "RIGHT": "LEFT",
+            }
+            if new_dir != opposite.get(self.direction):
+                self.direction = new_dir
+    

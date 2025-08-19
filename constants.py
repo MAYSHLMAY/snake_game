@@ -9,7 +9,7 @@ GRID_HEIGHT = SCREEN_HEIGHT // SNAKE_SIZE
 
 ''' SNAKE SPEED '''
 
-FPS = 10  
+FPS = 1
 
 
 ''' SNAKE COLOR, FOOD, ENVIRONMENT '''
@@ -18,6 +18,7 @@ WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
 RED = (255, 0, 0)
 GREEN = (0, 255, 0)
+DARK_GREEN = (0, 200, 0)
 BLUE = (0, 0, 255)
 
 ''' DIRECTIONS '''

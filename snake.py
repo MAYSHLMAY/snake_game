@@ -79,7 +79,7 @@ class Snake:
         """Draw the snake on the screen."""
         for i, segment in enumerate(self.segments):
             color = DARK_GREEN if i == 0 else GREEN 
-            pygame.draw.rect(screen, color, (segment[0], segment[1], SNAKE_SIZE, SNAKE_SIZE))
+            pygame.draw.rect(screen, color, (segment[0], segment[1], SNAKE_SIZE, SNAKE_SIZE), 1)
 
     
 

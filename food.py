@@ -21,3 +21,20 @@ class Food:
         x = random.randint(0, (SCREEN_WIDTH - SNAKE_SIZE) // SNAKE_SIZE) * SNAKE_SIZE
         y = random.randint(0, (SCREEN_HEIGHT - SNAKE_SIZE) // SNAKE_SIZE) * SNAKE_SIZE
         return (x, y)  
+    def spawn(self):
+        """Respawn food at a new random position."""
+        self.position = self.random_position()
+
+    def check_collision(self, snake_head):
+        """
+        Check if the snake ate the food.
+        Returns True if collision occurs.
+        """
+        if self.position == snake_head:
+            self.spawn()  # respawn food immediately
+            return True
+        return False
+
+    def draw(self, screen):
+        """Draw the food on the screen."""
+        pygame.draw.rect(screen, RED, (self.position[0], self.position[1], SNAKE_SIZE, SNAKE_SIZE))

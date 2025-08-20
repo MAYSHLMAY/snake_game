@@ -19,7 +19,7 @@ class Score:
             x_cor (int, optional): X coordinate for the score display. Defaults to 20.
             y_cor (int, optional): Y coordinate for the score display. Defaults to 20.
         """
-        text_surface = self.font.render(str(self.score), False, (0,0,0))
+        text_surface = self.font.render(str(self.score), False, (255,255,255))
         screen.blit(text_surface, (x_cor, y_cor))
 
     def increase_score(self, screen, x_cor=20, y_cor=20):

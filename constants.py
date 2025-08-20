@@ -6,7 +6,7 @@ SCREEN_WIDTH = 800
 SCREEN_HEIGHT = 600
 SNAKE_SIZE = 20
 GRID_WIDTH = SCREEN_WIDTH // SNAKE_SIZE
-GRID_HEIGHT = SCREEN_HEIGHT // SNAKE_SIZE 
+GRID_HEIGHT = SCREEN_HEIGHT // SNAKE_SIZE
 
 ''' SNAKE SPEED '''
 
@@ -31,11 +31,11 @@ RIGHT = (1, 0)
 
 ''' GAME SETTINGS '''
 
-INITIAL_SNAKE_LENGTH = 3  
+INITIAL_SNAKE_LENGTH = 3
 FOOD_SIZE = SNAKE_SIZE
 SCORE_PER_FOOD = 10
 WALL_COLLISION = False
-SELF_COLLISION = True  
+SELF_COLLISION = True
 
 """ player controls and directions """
 
@@ -57,15 +57,12 @@ PLAYER_CONTROLS = {
     },
 
     """ Optional for the future """
-    
+
     "snake2": {
         pygame.K_w: "UP",
         pygame.K_s: "DOWN",
         pygame.K_a: "LEFT",
         pygame.K_d: "RIGHT",
     },
-    
+
 }
-
-
-
